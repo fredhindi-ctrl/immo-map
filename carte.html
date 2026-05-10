@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carte Immo — 10/05/2026 17:44</title>
+<meta name="generated" content="10/05/2026 17:44">
+<meta name="count" content="2">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<style>
+  body { margin:0; font-family: Arial, sans-serif; }
+  #map { height: calc(100vh - 48px); }
+  #header { background:#2C3E50; color:#fff; padding:10px 20px; font-size:14px;
+             display:flex; align-items:center; gap:16px; }
+  #header strong { font-size:16px; }
+  .popup-thumb { width:100%; height:120px; object-fit:cover; border-radius:4px;
+                  margin-bottom:8px; background:#eee; display:block; }
+  .popup-title { font-weight:bold; font-size:14px; margin-bottom:4px; }
+  .popup-price { font-size:16px; font-weight:bold; margin-bottom:2px; }
+  .popup-sub { color:#666; font-size:12px; margin-bottom:6px; }
+  .popup-badge { display:inline-block; padding:2px 8px; border-radius:10px;
+                  color:#fff; font-size:11px; margin-bottom:8px; }
+  .popup-btn { display:block; text-align:center; padding:6px 12px; border-radius:4px;
+                color:#fff; text-decoration:none; font-size:13px; font-weight:bold; margin-top:6px; }
+</style>
+</head>
+<body>
+<div id="header">
+  <strong>🏠 Carte Immo</strong>
+  <span>2 annonce(s) · Générée le 10/05/2026 17:44</span>
+</div>
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const markers = [{"lat": 48.8588897, "lon": 2.320041, "precise": false, "title": "Test Appartement 65 m2", "price_fmt": "450 000 €", "price_per_m2": "6 923 €/m²", "surface": 65, "pieces": 3, "ville": "Paris", "url": "https://bienici.com", "thumb": "", "site": "bienici", "color": "#4A90D9"}, {"lat": 45.7578137, "lon": 4.8320114, "precise": false, "title": "Test Studio Lyon", "price_fmt": "180 000 €", "price_per_m2": "6 428 €/m²", "surface": 28, "pieces": 1, "ville": "Lyon", "url": "https://leboncoin.fr", "thumb": "", "site": "leboncoin", "color": "#FF6E14"}];
+
+const map = L.map('map');
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenStreetMap contributors'
+}).addTo(map);
+
+const bounds = [];
+markers.forEach(m => {
+  const color = m.color || '#999';
+  const siteLabel = m.site.charAt(0).toUpperCase() + m.site.slice(1);
+
+  const thumbHtml = m.thumb
+    ? `<img src="${m.thumb}" class="popup-thumb" onerror="this.style.display='none'">`
+    : `<div style="width:100%;height:80px;background:#eee;border-radius:4px;margin-bottom:8px"></div>`;
+
+  const ppm2 = m.price_per_m2 ? `<br>${m.price_per_m2}` : '';
+  const details = [m.surface ? m.surface + ' m²' : '', m.pieces ? m.pieces + ' pièce(s)' : '']
+    .filter(Boolean).join(' · ');
+
+  const popup = `
+    <div style="width:220px">
+      ${thumbHtml}
+      <span class="popup-badge" style="background:${color}">${siteLabel}</span>
+      <div class="popup-title">${m.title}</div>
+      <div class="popup-price" style="color:${color}">${m.price_fmt}${ppm2}</div>
+      <div class="popup-sub">${details}${m.ville ? ' · ' + m.ville : ''}</div>
+      <a href="${m.url}" target="_blank" class="popup-btn" style="background:${color}">
+        Voir l'annonce →
+      </a>
+    </div>`;
+
+  let marker;
+  if (m.precise) {
+    const icon = L.divIcon({
+      html: `<div style="background:${color};width:14px;height:14px;border-radius:50%;
+                          border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.4)"></div>`,
+      iconSize: [18, 18], iconAnchor: [9, 9], className: ''
+    });
+    marker = L.marker([m.lat, m.lon], {icon});
+  } else {
+    marker = L.circle([m.lat, m.lon], {
+      radius: 800, color: color, fillColor: color,
+      fillOpacity: 0.25, weight: 2
+    });
+  }
+
+  marker.bindPopup(popup, {maxWidth: 240}).addTo(map);
+  bounds.push([m.lat, m.lon]);
+});
+
+if (bounds.length > 0) {
+  map.fitBounds(bounds, {padding: [40, 40]});
+} else {
+  map.setView([48.86, 2.35], 12);
+}
+</script>
+</body>
+</html>
