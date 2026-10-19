@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Carte Immo — 17/10/2026 10:02</title>
-<meta name="generated" content="17/10/2026 10:02">
-<meta name="count" content="1">
+<title>Carte Immo — 19/10/2026 17:29</title>
+<meta name="generated" content="19/10/2026 17:29">
+<meta name="count" content="6">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <style>
   body { margin:0; font-family: Arial, sans-serif; }
@@ -27,13 +27,13 @@
 <body>
 <div id="header">
   <strong>🏠 Carte Immo</strong>
-  <span>1 annonce(s) · Générée le 17/10/2026 10:02</span>
+  <span>6 annonce(s) · Générée le 19/10/2026 17:29</span>
 </div>
 <div id="map"></div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-const markers = [{"lat": 48.898168, "lon": -1.5118727, "precise": false, "title": "Maison 5 pièces 100 m²", "price_fmt": "350 000 €", "price_per_m2": "3 500 €/m²", "surface": 100, "pieces": 5, "ville": "Bréhal", "url": "https://www.leboncoin.fr/ad/ventes_immobilieres/3289677079", "thumb": "https://img.leboncoin.fr/api/v1/lbcpb1/images/2f/c4/4d/2fc44d3a7249ba33dadc6e873628b8d75ed3dce4.jpg?rule=ad-thumb", "site": "leboncoin", "color": "#FF6E14"}];
+const markers = [{"lat": 48.8376296, "lon": -1.5959177, "precise": false, "title": "Maison 5 pièces 101 m²", "price_fmt": "379 000 €", "price_per_m2": "3 752 €/m²", "surface": 101, "pieces": 5, "ville": "Granville", "url": "https://www.leboncoin.fr/ad/ventes_immobilieres/3288594837", "thumb": "https://img.leboncoin.fr/api/v1/lbcpb1/images/59/e2/72/59e27207745970336770a475001c03166bd55aee.jpg?rule=ad-thumb", "site": "leboncoin", "color": "#FF6E14"}, {"lat": 48.8705103, "lon": -1.5160546, "precise": false, "title": "Maison 7 pièces 161 m²", "price_fmt": "234 000 €", "price_per_m2": "1 453 €/m²", "surface": 161, "pieces": 7, "ville": "Coudeville-sur-Mer", "url": "https://www.leboncoin.fr/ad/ventes_immobilieres/3289145391", "thumb": "https://img.leboncoin.fr/api/v1/lbcpb1/images/d3/86/c7/d386c778139d9951fc5f8b45df8f1f90e5f5dc20.jpg?rule=ad-thumb", "site": "leboncoin", "color": "#FF6E14"}, {"lat": 48.8488845, "lon": -1.5813204, "precise": false, "title": "Maison de ville", "price_fmt": "287 000 €", "price_per_m2": "1 979 €/m²", "surface": 145, "pieces": 7, "ville": "Donville-les-Bains", "url": "https://www.leboncoin.fr/ad/ventes_immobilieres/3290090968", "thumb": "https://img.leboncoin.fr/api/v1/lbcpb1/images/08/5e/3b/085e3b129d4579ba47928af620a2f80345d22c68.jpg?rule=ad-thumb", "site": "leboncoin", "color": "#FF6E14"}, {"lat": 48.8705103, "lon": -1.5160546, "precise": false, "title": "Maison de charme", "price_fmt": "455 000 €", "price_per_m2": "3 250 €/m²", "surface": 140, "pieces": 8, "ville": "Coudeville-sur-Mer", "url": "https://www.leboncoin.fr/ad/ventes_immobilieres/3217403996", "thumb": "https://img.leboncoin.fr/api/v1/lbcpb1/images/38/2c/bd/382cbdcabb4d65732bc1b241a8e3b747082eb6d0.jpg?rule=ad-thumb", "site": "leboncoin", "color": "#FF6E14"}, {"lat": 48.898168, "lon": -1.5118727, "precise": false, "title": "Maison de bourg à réinventer – bréhal – 5 km de la mer", "price_fmt": "112 000 €", "price_per_m2": "1 647 €/m²", "surface": 68, "pieces": 4, "ville": "Bréhal", "url": "https://www.leboncoin.fr/ad/ventes_immobilieres/3253403772", "thumb": "https://img.leboncoin.fr/api/v1/lbcpb1/images/4c/b9/15/4cb915b10916f067cb60e62c72ce3b283e5af10f.jpg?rule=ad-thumb", "site": "leboncoin", "color": "#FF6E14"}, {"lat": 52.0799838, "lon": 4.3113461, "precise": false, "title": "House 69 m²", "price_fmt": "176 000 €", "price_per_m2": "2 550 €/m²", "surface": 69, "pieces": 3, "ville": "La Haye", "url": "https://www.bienici.com/annonce/legget-PRO2ENHEYSAK", "thumb": "https://image.hestia.immo/5MwaI_sk43tIg4Wej7L9uFVc6w-5NNygDruS7vw_gXQ/w:800/h:600/rt:fill/wm:0.9:so:1:75:0.25/dpr:1/el:false/ex:false/mb:0/aHR0cHM6Ly9jZG4uaGVzdGlhLmltbW8vaW1hZ2UvVEVOM1hQTkMvMjAyNi0xMC9ET0MyRlRURkhOMjcucG5n.jpg", "site": "bienici", "color": "#4A90D9"}];
 
 const map = L.map('map');
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
