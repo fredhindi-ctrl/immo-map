@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Carte Immo — 12/11/2026 21:40</title>
-<meta name="generated" content="12/11/2026 21:40">
-<meta name="count" content="3">
+<title>Carte Immo — 20/11/2026 13:37</title>
+<meta name="generated" content="20/11/2026 13:37">
+<meta name="count" content="2">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <style>
   body { margin:0; font-family: Arial, sans-serif; }
@@ -27,13 +27,13 @@
 <body>
 <div id="header">
   <strong>🏠 Carte Immo</strong>
-  <span>3 annonce(s) · Générée le 12/11/2026 21:40</span>
+  <span>2 annonce(s) · Générée le 20/11/2026 13:37</span>
 </div>
 <div id="map"></div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-const markers = [{"lat": 48.8376296, "lon": -1.5959177, "precise": false, "title": "House 65 m²", "price_fmt": "91 500 €", "price_per_m2": "1 407 €/m²", "surface": 65, "pieces": 3, "ville": "Granville", "url": "https://www.bienici.com/annonce/immo-facile-60660965", "thumb": "https://media.immo-facile.com/office/cabinet-folliot/catalog/images/pr_p/6/0/6/6/0/9/6/5/60660965a.jpg?DATEMAJ=21/05/2026-11:59:56", "site": "bienici", "color": "#4A90D9"}, {"lat": 48.8376296, "lon": -1.5959177, "precise": false, "title": "House 65 m²", "price_fmt": "92 500 €", "price_per_m2": "1 423 €/m²", "surface": 65, "pieces": 3, "ville": "Granville", "url": "https://www.bienici.com/annonce/laforet-immo-facile-52701974", "thumb": "https://media.immo-facile.com/office9/laforet_granville_aqm/catalog/images/pr_p/5/2/7/0/1/9/7/4/52701974a.jpg?DATEMAJ=12/11/2026-15:03:19", "site": "bienici", "color": "#4A90D9"}, {"lat": 49.3401236, "lon": -1.6756394, "precise": false, "title": "House 52 m²", "price_fmt": "113 500 €", "price_per_m2": "2 182 €/m²", "surface": 52, "pieces": 4, "ville": "Port-Bail-sur-Mer", "url": "https://www.bienici.com/annonce/legget-PRO3NV8NG71V", "thumb": "https://image.hestia.immo/2qOlQJGGzIfizk2vf4ajIlF-k6-MMStL7-VeYC8kiPQ/w:800/h:600/rt:fill/wm:0.9:so:1:75:0.25/dpr:1/el:false/ex:false/mb:0/aHR0cHM6Ly9jZG4uaGVzdGlhLmltbW8vaW1hZ2UvVEVOM1hQTkMvMjAyNi0xMS9ET0MxTVhISlQwM1MucG5n.jpg", "site": "bienici", "color": "#4A90D9"}];
+const markers = [{"lat": 49.1815817, "lon": -1.5759293, "precise": false, "title": "House 42 m²", "price_fmt": "113 000 €", "price_per_m2": "2 690 €/m²", "surface": 42, "pieces": 2, "ville": "Pirou", "url": "https://www.bienici.com/annonce/immo-facile-61757878", "thumb": "https://media.immo-facile.com/office16/pozzoimmobilier/catalog/images/pr_p/6/1/7/5/7/8/7/8/61757878a.jpg?DATEMAJ=18/11/2026-17:02:53", "site": "bienici", "color": "#4A90D9"}, {"lat": 52.0799838, "lon": 4.3113461, "precise": false, "title": "House 110 m²", "price_fmt": "150 000 €", "price_per_m2": "1 363 €/m²", "surface": 110, "pieces": 6, "ville": "La Haye", "url": "https://www.bienici.com/annonce/immo-facile-61729945", "thumb": "https://media.immo-facile.com/office/cabinet-folliot/catalog/images/pr_p/6/1/7/2/9/9/4/5/61729945a.jpg?DATEMAJ=19/11/2026-10:27:39", "site": "bienici", "color": "#4A90D9"}];
 
 const map = L.map('map');
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
